@@ -1,7 +1,11 @@
 Kgb::Application.routes.draw do
+  
+  # resources :tests
   resources :people
 
-  resources :sites
+  resources :sites do
+    resources :tests
+  end
 
   get '/' => 'home#home'
 

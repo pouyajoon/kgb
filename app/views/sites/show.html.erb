@@ -5,5 +5,22 @@
   <%= @site.name %>
 </p>
 
+
+<h2>Tests</h2>
+<ul>
+  <%= render @site.tests %>
+</ul>
+
+<%= form_for([@site, @site.tests.build]) do |f| %>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+
 <%= link_to 'Edit', edit_site_path(@site) %> |
 <%= link_to 'Back', sites_path %>
